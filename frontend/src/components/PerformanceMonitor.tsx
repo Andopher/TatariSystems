@@ -21,11 +21,14 @@ const PerformanceMonitor: React.FC = () => {
       const fidObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries()
         entries.forEach((entry) => {
-          console.log('FID:', entry.processingStart - entry.startTime)
-          
-          // Send to analytics if FID is poor
-          if (entry.processingStart - entry.startTime > 100) {
-            console.warn('Poor FID detected:', entry.processingStart - entry.startTime)
+          const fidEntry = entry as PerformanceEventTiming
+          if (fidEntry.processingStart) {
+            console.log('FID:', fidEntry.processingStart - fidEntry.startTime)
+            
+            // Send to analytics if FID is poor
+            if (fidEntry.processingStart - fidEntry.startTime > 100) {
+              console.warn('Poor FID detected:', fidEntry.processingStart - fidEntry.startTime)
+            }
           }
         })
       })

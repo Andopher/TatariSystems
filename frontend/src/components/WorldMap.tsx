@@ -316,7 +316,7 @@ const WorldMap: React.FC = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .custom-popup .leaflet-popup-content-wrapper {
           background: white;
           border-radius: 12px;

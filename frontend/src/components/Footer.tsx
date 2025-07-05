@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Globe, Cpu, Cloud, Bitcoin } from 'lucide-react'
@@ -19,28 +19,28 @@ const Footer = () => {
     {
       title: 'Company',
       links: [
-        { name: 'About Us', path: '/about' },
-        { name: 'Our Projects', path: '/projects' },
-        { name: 'Contact', path: '/contact' },
-        { name: 'Careers', path: '/careers' }
+        { name: 'About Us', path: '/about', icon: undefined },
+        { name: 'Our Projects', path: '/projects', icon: undefined },
+        { name: 'Contact', path: '/contact', icon: undefined },
+        { name: 'Careers', path: '/careers', icon: undefined }
       ]
     },
     {
       title: 'Resources',
       links: [
-        { name: 'Case Studies', path: '/case-studies' },
-        { name: 'Documentation', path: '/docs' },
-        { name: 'Blog', path: '/blog' },
-        { name: 'Support', path: '/support' }
+        { name: 'Case Studies', path: '/case-studies', icon: undefined },
+        { name: 'Documentation', path: '/docs', icon: undefined },
+        { name: 'Blog', path: '/blog', icon: undefined },
+        { name: 'Support', path: '/support', icon: undefined }
       ]
     },
     {
       title: 'Legal',
       links: [
-        { name: 'Privacy Policy', path: '/privacy' },
-        { name: 'Terms of Service', path: '/terms' },
-        { name: 'Cookie Policy', path: '/cookies' },
-        { name: 'GDPR', path: '/gdpr' }
+        { name: 'Privacy Policy', path: '/privacy', icon: undefined },
+        { name: 'Terms of Service', path: '/terms', icon: undefined },
+        { name: 'Cookie Policy', path: '/cookies', icon: undefined },
+        { name: 'GDPR', path: '/gdpr', icon: undefined }
       ]
     }
   ]
