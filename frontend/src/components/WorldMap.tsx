@@ -150,7 +150,6 @@ const WorldMap: React.FC = () => {
       doubleClickZoom: false,
       boxZoom: false,
       keyboard: false,
-      tap: false,
       touchZoom: false,
       bounceAtZoomLimits: false
     })
