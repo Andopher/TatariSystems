@@ -24,5 +24,12 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // Suppress warnings about missing dependencies
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return
+        warn(warning)
+      }
+    }
   },
 }) 
