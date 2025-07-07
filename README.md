@@ -39,6 +39,9 @@ TatariSystems/
 │   │   ├── utils/          # Utility functions
 │   │   ├── types/          # TypeScript types
 │   │   └── assets/         # Static assets
+│   ├── public/             # Static files (images, etc.)
+│   │   ├── assets/         # Logo and other assets
+│   │   └── headshots/      # Team member photos
 │   ├── package.json
 │   └── index.html
 ├── shared/                 # Shared types/utilities
@@ -107,6 +110,28 @@ The project uses a consistent design system with:
 ### Frontend (React)
 - Deploy to Vercel, Netlify, or GitHub Pages
 - Build optimized for production
+
+### GitHub Pages Deployment
+
+The frontend is configured for GitHub Pages deployment with the following setup:
+
+1. **Base Path**: The Vite config uses `/TatariSystems/` as the base path for production builds
+2. **Asset Paths**: All static assets (images, logos, headshots) use the `getAssetPath()` utility function
+3. **File Structure**: 
+   - Images are stored in `frontend/public/assets/` and `frontend/public/headshots/`
+   - Referenced in code using the utility function for proper GitHub Pages paths
+
+#### Asset Management
+- **Logo**: `/public/assets/tatarilogo.png`
+- **Team Photos**: `/public/headshots/[lastname].jpg`
+- **Path Utility**: `src/utils/paths.ts` handles production vs development paths
+
+#### Build and Deploy
+```bash
+cd frontend
+npm run build
+# The dist/ folder is ready for GitHub Pages deployment
+```
 
 ## 📄 License
 

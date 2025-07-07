@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { getAssetPath } from '../utils/paths'
 
 const Navbar = () => {
   const location = useLocation()
@@ -14,7 +15,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <motion.img 
-              src="/assets/tatarilogo.png" 
+              src={getAssetPath('/assets/tatarilogo.png')} 
               alt="Tatari Systems Logo" 
               className="h-8 w-auto transition-all duration-300 group-hover:scale-105"
               whileHover={{ rotate: 5 }}

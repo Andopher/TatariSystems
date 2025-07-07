@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, TrendingUp, Zap, Shield, Globe, Cpu, Cloud, Bitcoin, Users, Award, CheckCircle, AlertTriangle, BarChart3, Target, Clock, DollarSign } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
+import { getAssetPath } from '../utils/paths'
 
 // CSS for animated hue rotation
 const gridHueAnim = `
@@ -184,7 +185,7 @@ const Home = () => {
         <Animated3DGrid />
         <div className="relative z-10 flex flex-col items-center justify-center w-full px-4">
           <motion.img
-            src="/assets/tatarilogo.png"
+            src={getAssetPath('/assets/tatarilogo.png')}
             alt="Tatari Logo"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

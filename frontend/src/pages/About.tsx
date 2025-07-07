@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
+import { getAssetPath } from '../utils/paths'
 
 const team = [
   { name: 'Alex Dalban', role: 'CEO, COO', img: 'dalban.jpg' },
@@ -87,7 +88,7 @@ const About = () => {
                 >
                   {member.img ? (
                     <img
-                      src={`/headshots/${member.img}`}
+                      src={getAssetPath(`/headshots/${member.img}`)}
                       alt={member.name}
                       className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-primary-100 shadow"
                       onError={e => {
