@@ -69,7 +69,7 @@ const Footer = () => {
     {
       icon: MapPin,
       label: 'Headquarters',
-      value: 'San Francisco, CA',
+      value: 'Boston, MA',
       href: '#'
     }
   ]

@@ -50,7 +50,7 @@ const Contact = () => {
           <h2 className="text-2xl font-bold text-secondary-900 mb-4">Company Info</h2>
           <div className="mb-2">Email: <a href="mailto:info@tatarisystems.com" className="text-primary-600">info@tatarisystems.com</a></div>
           <div className="mb-2">Phone: <a href="tel:+15551234567" className="text-primary-600">+1 (555) 123-4567</a></div>
-          <div className="mb-2">Headquarters: San Francisco, CA</div>
+          <div className="mb-2">Headquarters: Boston, MA</div>
         </motion.section>
         <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} viewport={{ once: true }}>
           <h2 className="text-2xl font-bold text-secondary-900 mb-4">Global Offices</h2>

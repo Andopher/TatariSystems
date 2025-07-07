@@ -7,35 +7,35 @@ const AIPlatform = () => (
     <Navbar />
     <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }} className="mb-16">
-        <h1 className="text-4xl font-extrabold text-secondary-900 mb-6">Tatari AI Platform</h1>
-        <p className="text-lg text-secondary-700 mb-8">Tatari bridges the gap between affordable and reliable AI compute. Here's how we do it:</p>
+        <h1 className="text-4xl font-extrabold text-secondary-900 mb-6">Supercharge Your AI Startup with Reliable, Affordable Compute</h1>
+        <p className="text-lg text-secondary-700 mb-8">Tatari gives you the power and flexibility to scale your models—without the enterprise price tag.</p>
       </motion.section>
 
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} viewport={{ once: true }} className="mb-16">
-        <h2 className="text-2xl font-bold text-primary-600 mb-6">The Problem</h2>
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">The Challenge for AI Startups</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-primary-50 rounded-lg p-6 shadow text-center">
             <div className="text-3xl font-extrabold text-primary-600 mb-2">70,000</div>
-            <div className="text-secondary-700">AI startups globally, many priced out of AWS/GCP compute.</div>
+            <div className="text-secondary-700">AI startups are being priced out of AWS/GCP compute.</div>
           </div>
           <div className="bg-primary-50 rounded-lg p-6 shadow text-center">
             <div className="text-3xl font-extrabold text-primary-600 mb-2">4.4x</div>
-            <div className="text-secondary-700">AI infrastructure gap is growing. Demand for compute is outpacing supply.</div>
+            <div className="text-secondary-700">Demand for compute is exploding, but affordable, reliable options are scarce.</div>
           </div>
           <div className="bg-primary-50 rounded-lg p-6 shadow text-center">
             <div className="text-3xl font-extrabold text-primary-600 mb-2">26x</div>
-            <div className="text-secondary-700">Global AI compute demand is projected to grow 26× by 2030.</div>
+            <div className="text-secondary-700">Global AI compute demand is projected to grow 26× by 2030—will your startup keep up?</div>
           </div>
         </div>
         <div className="bg-secondary-50 rounded-lg p-6">
           <p className="text-secondary-700 mb-2">AWS H200 = $10.6/hr vs. Vast.ai = $2.4/hr</p>
-          <p className="text-secondary-700 mb-2">But cheap compute is unreliable and frequently fails.</p>
-          <p className="text-secondary-700 font-semibold">Tatari exists to fix this mismatch, brokering stable, regionally matched GPU compute at accessible prices.</p>
+          <p className="text-secondary-700 mb-2">But cheap compute is unreliable and frequently fails—leaving your team stuck.</p>
+          <p className="text-secondary-700 font-semibold">Tatari is built for founders who need to train and deploy faster—without breaking the bank.</p>
         </div>
       </motion.section>
 
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} viewport={{ once: true }} className="mb-16">
-        <h2 className="text-2xl font-bold text-primary-600 mb-6">How Tatari Bridges Price and Performance</h2>
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">How Tatari Empowers AI Startups</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-blue-50 rounded-lg p-6 shadow">
             <h3 className="text-xl font-bold text-blue-600 mb-4">Idle GPUs</h3>
@@ -53,7 +53,7 @@ const AIPlatform = () => (
       </motion.section>
 
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} viewport={{ once: true }} className="mb-16">
-        <h2 className="text-2xl font-bold text-primary-600 mb-6">The Answer: Tatari – The Trusted Broker</h2>
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">Why AI Startups Choose Tatari</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="bg-white rounded-lg p-6 shadow border">
             <h3 className="text-xl font-bold text-secondary-900 mb-4">1. Sourcing</h3>
@@ -78,7 +78,7 @@ const AIPlatform = () => (
       </motion.section>
 
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} viewport={{ once: true }} className="mb-16">
-        <h2 className="text-2xl font-bold text-primary-600 mb-6">Pricing Logic</h2>
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">Simple, Transparent Pricing for Startups</h2>
         <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
           <div className="space-y-4">
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
@@ -116,7 +116,7 @@ const AIPlatform = () => (
       </motion.section>
 
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }} viewport={{ once: true }} className="mb-16">
-        <h2 className="text-2xl font-bold text-primary-600 mb-6">Competitor Analysis</h2>
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">See How Tatari Compares</h2>
         <div className="overflow-x-auto">
           <table className="w-full bg-white rounded-xl shadow overflow-hidden">
             <thead className="bg-secondary-900 text-white">
@@ -158,7 +158,7 @@ const AIPlatform = () => (
       </motion.section>
 
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }} viewport={{ once: true }} className="mb-16">
-        <h2 className="text-2xl font-bold text-primary-600 mb-6">Target Customers</h2>
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">Built for AI Innovators</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-blue-50 rounded-lg p-6 shadow">
             <h3 className="text-xl font-bold text-blue-600 mb-4">AI/ML Startups</h3>
@@ -178,7 +178,7 @@ const AIPlatform = () => (
       </motion.section>
 
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }} viewport={{ once: true }} className="mb-16">
-        <h2 className="text-2xl font-bold text-primary-600 mb-6">What If We Could Bridge Price and Performance?</h2>
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">Ready to Scale Your AI Startup?</h2>
         <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-8 shadow">
           <ul className="space-y-4 text-secondary-700 mb-6">
             <li className="flex items-start">
@@ -194,7 +194,7 @@ const AIPlatform = () => (
               <span>Can we build a global-first infrastructure that's also green and regulation-friendly?</span>
             </li>
           </ul>
-          <p className="text-lg font-semibold text-secondary-900">We believe the answer is yes, and Tatari is how.</p>
+          <p className="text-lg font-semibold text-secondary-900 mt-6">Get started with Tatari and unlock the compute your team needs to innovate and grow.</p>
         </div>
       </motion.section>
     </div>

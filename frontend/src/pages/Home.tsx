@@ -203,10 +203,10 @@ const Home = () => {
               Powering tomorrow, today.
             </h1>
             <h2 className="text-primary-500 text-2xl md:text-3xl font-bold mb-4">
-              Asset-Light GPU Brokerage
+              Launch your next AI project with Tatari's trusted GPU platform—fast, sustainable, and always available.
             </h2>
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
-              The trusted broker for affordable AI compute
+              Get started in minutes. No commitments. No hidden fees.
             </p>
           </motion.div>
           
@@ -217,7 +217,7 @@ const Home = () => {
             className="group flex items-center px-8 py-4 rounded-full border border-white/60 bg-black/60 hover:bg-white/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 text-white font-semibold text-lg shadow-lg"
             style={{backdropFilter: 'blur(4px)'}}
           >
-            <span className="mr-4 text-primary-500">Explore Products</span>
+            <span className="mr-4 text-primary-500">Get Started</span>
             <span className="flex items-center justify-center w-8 h-8 rounded-full border border-white/40 group-hover:bg-primary-500 group-hover:text-white transition-all">
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
@@ -236,10 +236,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-secondary-900 mb-6">
-              The Problem
+              Struggling to Find Affordable, Reliable AI Compute?
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              The AI infrastructure gap is growing. Demand for compute is outpacing supply, leaving startups priced out of hyperscaler clouds or stuck with unreliable, low-cost alternatives.
+              Tatari delivers enterprise-grade GPUs at startup-friendly prices—no more compromises. Get the power you need, when you need it, without breaking the bank.
             </p>
           </motion.div>
 
@@ -351,10 +351,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-secondary-900 mb-6">
-              How Tatari Bridges Price and Performance
+              Why Choose Tatari?
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              We solve the compute reliability problem through intelligent aggregation and carbon-aware scheduling
+              Guaranteed uptime, transparent pricing, and green energy—so you can focus on building, not infrastructure.
             </p>
           </motion.div>
 
@@ -432,10 +432,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-secondary-900 mb-6">
-              Competitor Analysis
+              Compare Your Options
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Tatari offers the best balance of price, reliability, and sustainability
+              See how Tatari stacks up on price, reliability, and sustainability—so you can make the best choice for your business.
             </p>
           </motion.div>
 
@@ -488,10 +488,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-secondary-900 mb-6">
-              Target Customers
+              Who Is Tatari For?
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              These users are compute-intensive, price-sensitive, and care deeply about latency and deployment flexibility
+              Tatari is built for teams who need scalable, affordable, and reliable compute—without the headaches of traditional cloud providers.
             </p>
           </motion.div>
 
@@ -549,10 +549,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-secondary-900 mb-6">
-              Pricing Logic
+              Simple, Transparent Pricing
             </h2>
             <p className="text-xl text-secondary-600">
-              Transparent pricing with 20% markup for sustainable operations
+              Know exactly what you'll pay—no surprises, no hidden fees. Just powerful compute at a fair price.
             </p>
           </motion.div>
 
@@ -609,10 +609,10 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Scale Sustainably?
+              Start Building with Tatari Today
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join the future of sustainable computing. Let's discuss how our infrastructure can power your growth.
+              Get instant access to powerful GPUs. Try for free or schedule a demo—no commitment required.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button 

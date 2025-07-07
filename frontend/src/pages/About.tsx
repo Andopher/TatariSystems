@@ -120,8 +120,8 @@ const About = () => {
             <h3 className="text-xl font-bold text-primary-700 mb-2">Ready to get started?</h3>
             <p className="text-secondary-700 mb-4">Sign up for a free trial or schedule a demo.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="mailto:support@tatari.ai" className="px-6 py-3 rounded-full bg-primary-500 text-white font-semibold shadow hover:bg-primary-600 transition-colors">Contact Us</a>
-              <a href="tel:+18005551234" className="px-6 py-3 rounded-full bg-secondary-900 text-white font-semibold shadow hover:bg-secondary-700 transition-colors">+1 (800) 555-1234</a>
+              <a href="mailto:support@tatari.ai" className="btn-primary">Contact Us</a>
+              <a href="tel:+18005551234" className="btn-secondary">+1 (800) 555-1234</a>
             </div>
             <div className="mt-6 flex justify-center gap-6 text-primary-600">
               <a href="https://twitter.com/tatari" target="_blank" rel="noopener noreferrer">Twitter</a>
