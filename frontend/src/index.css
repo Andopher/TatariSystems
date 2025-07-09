@@ -976,3 +976,35 @@
     --accent-500: #CFE3FF;
   }
 } 
+
+/* Aggressive underline removal for React Router Links */
+a, a:hover, a:focus, a:visited, a:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: none !important;
+  text-decoration-color: transparent !important;
+  text-decoration-thickness: 0 !important;
+}
+
+/* Target React Router Link components specifically */
+[data-router-link], [data-router-link]:hover, [data-router-link]:focus, [data-router-link]:visited, [data-router-link]:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: none !important;
+  text-decoration-color: transparent !important;
+  text-decoration-thickness: 0 !important;
+}
+
+/* Remove any blue underlines that might be browser defaults */
+a {
+  color: inherit !important;
+}
+
+/* Target all elements within the navbar dropdowns */
+.navbar-dropdown a, .navbar-dropdown a:hover, .navbar-dropdown a:focus, .navbar-dropdown a:visited, .navbar-dropdown a:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: none !important;
+  text-decoration-color: transparent !important;
+  text-decoration-thickness: 0 !important;
+} 

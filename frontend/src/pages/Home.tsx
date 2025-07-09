@@ -226,7 +226,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -235,10 +235,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Struggling to Find Affordable, Reliable AI Compute?
             </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Tatari delivers enterprise-grade GPUs at startup-friendly prices—no more compromises. Get the power you need, when you need it, without breaking the bank.
             </p>
           </motion.div>
@@ -253,11 +253,11 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary-100 rounded-full flex items-center justify-center">
-                  <stat.icon className="h-8 w-8 text-primary-600" />
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary-700 rounded-full flex items-center justify-center">
+                  <stat.icon className="h-8 w-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-secondary-900 mb-2">{stat.number}</div>
-                <div className="text-secondary-600">{stat.label}</div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-gray-300">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -267,32 +267,32 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-16 p-8 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl"
+            className="mt-16 p-8 bg-gray-800 rounded-2xl border border-gray-700"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-4">Price Comparison</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Price Comparison</h3>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow">
-                    <span className="font-semibold">AWS H200</span>
-                    <span className="text-red-600 font-bold">$10.6/hr</span>
+                  <div className="flex justify-between items-center p-4 bg-gray-700 rounded-lg shadow">
+                    <span className="font-semibold text-gray-200">AWS H200</span>
+                    <span className="text-red-400 font-bold">$10.6/hr</span>
                   </div>
-                  <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow">
-                    <span className="font-semibold">Vast.ai</span>
-                    <span className="text-green-600 font-bold">$2.4/hr</span>
+                  <div className="flex justify-between items-center p-4 bg-gray-700 rounded-lg shadow">
+                    <span className="font-semibold text-gray-200">Vast.ai</span>
+                    <span className="text-green-400 font-bold">$2.4/hr</span>
                   </div>
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-4">Environmental Impact</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Environmental Impact</h3>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow">
-                    <span className="font-semibold">US Fossil Fuel Data Centers</span>
-                    <span className="text-red-600 font-bold">820kg CO₂/MWh</span>
+                  <div className="flex justify-between items-center p-4 bg-gray-700 rounded-lg shadow">
+                    <span className="font-semibold text-gray-200">US Fossil Fuel Data Centers</span>
+                    <span className="text-red-400 font-bold">820kg CO₂/MWh</span>
                   </div>
-                  <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow">
-                    <span className="font-semibold">Tatari Hydro-based Compute</span>
-                    <span className="text-green-600 font-bold">20kg CO₂/MWh</span>
+                  <div className="flex justify-between items-center p-4 bg-gray-700 rounded-lg shadow">
+                    <span className="font-semibold text-gray-200">Tatari Hydro-based Compute</span>
+                    <span className="text-green-400 font-bold">20kg CO₂/MWh</span>
                   </div>
                 </div>
               </div>
@@ -302,7 +302,7 @@ const Home = () => {
       </section>
 
       {/* Problems Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -311,10 +311,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Decentralized GPU Complications
             </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Current solutions fail to deliver both affordability and reliability
             </p>
           </motion.div>
@@ -327,13 +327,13 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+                className="bg-gray-700 p-8 rounded-2xl shadow-lg border border-gray-600"
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${problem.color} rounded-2xl flex items-center justify-center mb-6`}>
                   <problem.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-4">{problem.title}</h3>
-                <p className="text-secondary-600 leading-relaxed">{problem.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{problem.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{problem.description}</p>
               </motion.div>
             ))}
           </div>
@@ -341,7 +341,7 @@ const Home = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -350,10 +350,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Why Choose Tatari?
             </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Guaranteed uptime, transparent pricing, and green energy—so you can focus on building, not infrastructure.
             </p>
           </motion.div>
@@ -366,13 +366,13 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+                className="bg-gray-700 p-8 rounded-2xl shadow-lg border border-gray-600 hover:shadow-xl transition-shadow"
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${solution.color} rounded-2xl flex items-center justify-center mb-6`}>
                   <solution.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-4">{solution.title}</h3>
-                <p className="text-secondary-600 leading-relaxed">{solution.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{solution.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{solution.description}</p>
               </motion.div>
             ))}
           </div>
@@ -384,36 +384,36 @@ const Home = () => {
             viewport={{ once: true }}
             className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-secondary-900 mb-4">Carbon Aware Scheduling</h3>
-              <p className="text-secondary-600 mb-4">
+            <div className="bg-gray-800 p-8 rounded-2xl border border-gray-600">
+              <h3 className="text-2xl font-bold text-white mb-4">Carbon Aware Scheduling</h3>
+              <p className="text-gray-300 mb-4">
                 Intelligent workload placement and timing can reduce emissions. Choosing low-carbon regions can cut a job's carbon footprint by up to 75%.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-sm text-secondary-700">50% of GPUs are idle globally</span>
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-2" />
+                  <span className="text-sm text-gray-300">50% of GPUs are idle globally</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-sm text-secondary-700">Aggregation unlocks significant capacity</span>
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-2" />
+                  <span className="text-sm text-gray-300">Aggregation unlocks significant capacity</span>
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-secondary-900 mb-4">Reliability Guarantees</h3>
+            <div className="bg-gray-800 p-8 rounded-2xl border border-gray-600">
+              <h3 className="text-2xl font-bold text-white mb-4">Reliability Guarantees</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="font-semibold">Uptime SLA</span>
-                  <span className="text-green-600 font-bold">99.9%</span>
+                  <span className="font-semibold text-gray-200">Uptime SLA</span>
+                  <span className="text-green-400 font-bold">99.9%</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-semibold">Startup Latency</span>
-                  <span className="text-green-600 font-bold">&lt;1 min</span>
+                  <span className="font-semibold text-gray-200">Startup Latency</span>
+                  <span className="text-green-400 font-bold">&lt;1 min</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-semibold">Success Rate</span>
-                  <span className="text-green-600 font-bold">95%+</span>
+                  <span className="font-semibold text-gray-200">Success Rate</span>
+                  <span className="text-green-400 font-bold">95%+</span>
                 </div>
               </div>
             </div>
@@ -422,7 +422,7 @@ const Home = () => {
       </section>
 
       {/* Competitor Analysis */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -431,17 +431,17 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Compare Your Options
             </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               See how Tatari stacks up on price, reliability, and sustainability—so you can make the best choice for your business.
             </p>
           </motion.div>
 
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
-              <thead className="bg-secondary-900 text-white">
+            <table className="w-full bg-gray-700 rounded-2xl shadow-lg overflow-hidden">
+              <thead className="bg-gray-900 text-white">
                 <tr>
                   <th className="px-6 py-4 text-left">Provider</th>
                   <th className="px-6 py-4 text-center">Price (H100/hr)</th>
@@ -457,18 +457,18 @@ const Home = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100 transition-colors`}
+                    className={`${index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-600'} hover:bg-gray-600 transition-colors`}
                   >
-                    <td className="px-6 py-4 font-semibold">
+                    <td className="px-6 py-4 font-semibold text-gray-200">
                       {competitor.name === 'Tatari' ? (
-                        <span className="text-primary-600 font-bold">{competitor.name}</span>
+                        <span className="text-primary-400 font-bold">{competitor.name}</span>
                       ) : (
                         competitor.name
                       )}
                     </td>
-                    <td className="px-6 py-4 text-center font-semibold">{competitor.price}</td>
-                    <td className="px-6 py-4 text-center">{competitor.sla}</td>
-                    <td className="px-6 py-4 text-center">{competitor.green}</td>
+                    <td className="px-6 py-4 text-center font-semibold text-gray-200">{competitor.price}</td>
+                    <td className="px-6 py-4 text-center text-gray-200">{competitor.sla}</td>
+                    <td className="px-6 py-4 text-center text-gray-200">{competitor.green}</td>
                   </motion.tr>
                 ))}
               </tbody>
@@ -478,7 +478,7 @@ const Home = () => {
       </section>
 
       {/* Target Customers */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -487,10 +487,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Who Is Tatari For?
             </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Tatari is built for teams who need scalable, affordable, and reliable compute—without the headaches of traditional cloud providers.
             </p>
           </motion.div>
@@ -501,17 +501,17 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl"
+              className="bg-gray-800 p-8 rounded-2xl border border-gray-600"
             >
-              <h3 className="text-2xl font-bold text-secondary-900 mb-4">AI/ML Startups</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">AI/ML Startups</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Need scalable, cost-effective inference & training compute</span>
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Need scalable, cost-effective inference & training compute</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Prefer flexible, low-commitment infrastructure</span>
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Prefer flexible, low-commitment infrastructure</span>
                 </li>
               </ul>
             </motion.div>
@@ -520,17 +520,17 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl"
+              className="bg-gray-800 p-8 rounded-2xl border border-gray-600"
             >
-              <h3 className="text-2xl font-bold text-secondary-900 mb-4">Academic Labs & Research</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Academic Labs & Research</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Require access to powerful GPUs for experimentation</span>
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Require access to powerful GPUs for experimentation</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Value latency and geographic proximity</span>
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Value latency and geographic proximity</span>
                 </li>
               </ul>
             </motion.div>
@@ -539,7 +539,7 @@ const Home = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -548,10 +548,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Simple, Transparent Pricing
             </h2>
-            <p className="text-xl text-secondary-600">
+            <p className="text-xl text-gray-300">
               Know exactly what you'll pay—no surprises, no hidden fees. Just powerful compute at a fair price.
             </p>
           </motion.div>
@@ -561,37 +561,37 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8"
+            className="bg-gray-700 rounded-2xl shadow-lg p-8 border border-gray-600"
           >
             <div className="space-y-4">
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">Wholesale GPU</span>
-                <span className="text-secondary-600">$1.00</span>
+              <div className="flex justify-between items-center p-4 bg-gray-600 rounded-lg">
+                <span className="font-semibold text-gray-200">Wholesale GPU</span>
+                <span className="text-gray-300">$1.00</span>
               </div>
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">Infrastructure & Ops</span>
-                <span className="text-secondary-600">$0.30</span>
+              <div className="flex justify-between items-center p-4 bg-gray-600 rounded-lg">
+                <span className="font-semibold text-gray-200">Infrastructure & Ops</span>
+                <span className="text-gray-300">$0.30</span>
               </div>
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">Support & SLA</span>
-                <span className="text-secondary-600">$0.10</span>
+              <div className="flex justify-between items-center p-4 bg-gray-600 rounded-lg">
+                <span className="font-semibold text-gray-200">Support & SLA</span>
+                <span className="text-gray-300">$0.10</span>
               </div>
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                <span className="font-semibold">Payment Processing Fees</span>
-                <span className="text-secondary-600">$0.10</span>
+              <div className="flex justify-between items-center p-4 bg-gray-600 rounded-lg">
+                <span className="font-semibold text-gray-200">Payment Processing Fees</span>
+                <span className="text-gray-300">$0.10</span>
               </div>
-              <div className="border-t pt-4">
-                <div className="flex justify-between items-center p-4 bg-primary-50 rounded-lg">
-                  <span className="font-semibold">Total Cost</span>
-                  <span className="text-primary-600 font-bold">$1.50</span>
+              <div className="border-t border-gray-600 pt-4">
+                <div className="flex justify-between items-center p-4 bg-primary-700 rounded-lg">
+                  <span className="font-semibold text-white">Total Cost</span>
+                  <span className="text-primary-300 font-bold">$1.50</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-secondary-50 rounded-lg mt-2">
-                  <span className="font-semibold">+ 20% Markup</span>
-                  <span className="text-secondary-600">$0.30</span>
+                <div className="flex justify-between items-center p-4 bg-gray-600 rounded-lg mt-2">
+                  <span className="font-semibold text-gray-200">+ 20% Markup</span>
+                  <span className="text-gray-300">$0.30</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg mt-2">
-                  <span className="font-semibold">Final Price to User</span>
-                  <span className="text-green-600 font-bold text-xl">$1.80</span>
+                <div className="flex justify-between items-center p-4 bg-green-700 rounded-lg mt-2">
+                  <span className="font-semibold text-white">Final Price to User</span>
+                  <span className="text-green-300 font-bold text-xl">$1.80</span>
                 </div>
               </div>
             </div>
@@ -600,7 +600,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary-600 to-secondary-700">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary-700 to-secondary-800">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
