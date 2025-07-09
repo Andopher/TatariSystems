@@ -3,71 +3,9 @@ import { motion } from 'framer-motion'
 import { useState, useRef } from 'react'
 import { getAssetPath } from '../utils/paths'
 
-const megaMenus = [
-  {
-    label: 'Products',
-    mainTo: '#',
-    content: (
-      <div className="flex justify-center gap-6 p-8 min-w-[900px] bg-gray-900/80 border border-gray-800 rounded-2xl shadow-2xl">
-        {['Omni Stack', 'Pricing', 'Training Stack', 'Inference Stack'].map((title) => (
-          <div
-            key={title}
-            className="bg-primary-700 rounded-lg p-6 w-48 h-24 flex items-center justify-center shadow border-2 border-transparent hover:border-white transition-colors duration-200 cursor-pointer"
-            onClick={() => {
-              const path = `/${title.toLowerCase().replace(/ /g, '-')}`
-              window.location.href = path
-            }}
-          >
-            <span className="text-white font-semibold text-lg">{title}</span>
-          </div>
-        ))}
-      </div>
-    ),
-  },
-  {
-    label: 'Company',
-    mainTo: '/about',
-    content: (
-      <div className="flex justify-center gap-6 p-8 min-w-[900px] bg-gray-900/80 border border-gray-800 rounded-2xl shadow-2xl">
-        {['Story', 'Team', 'Careers', 'Contact'].map((title) => (
-          <div
-            key={title}
-            className="bg-primary-700 rounded-lg p-6 w-48 h-24 flex items-center justify-center shadow border-2 border-transparent hover:border-white transition-colors duration-200 cursor-pointer"
-            onClick={() => {
-              const path = `/${title.toLowerCase()}`
-              window.location.href = path
-            }}
-          >
-            <span className="text-white font-semibold text-lg">{title}</span>
-          </div>
-        ))}
-      </div>
-    ),
-  },
-  {
-    label: 'Learn More',
-    mainTo: '#',
-    content: (
-      <div className="flex justify-center gap-6 p-8 min-w-[900px] bg-gray-900/80 border border-gray-800 rounded-2xl shadow-2xl">
-        {['Blog', 'Press Releases', 'Case Studies'].map((title) => (
-          <div
-            key={title}
-            className="bg-primary-700 rounded-lg p-6 w-48 h-24 flex items-center justify-center shadow border-2 border-transparent hover:border-white transition-colors duration-200 cursor-pointer"
-            onClick={() => {
-              const path = `/${title.toLowerCase().replace(/ /g, '-')}`
-              window.location.href = path
-            }}
-          >
-            <span className="text-white font-semibold text-lg">{title}</span>
-          </div>
-        ))}
-      </div>
-    ),
-  },
-]
-
 const Navbar = () => {
   const location = useLocation()
+  const navigate = useNavigate()
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null)
   const isActive = (path: string) => location.pathname === path
@@ -79,6 +17,69 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 100)
   }
+
+  const megaMenus = [
+    {
+      label: 'Products',
+      mainTo: '#',
+      content: (
+        <div className="flex justify-center gap-6 p-8 min-w-[900px] bg-gray-900/80 border border-gray-800 rounded-2xl shadow-2xl">
+          {['Omni Stack', 'Pricing', 'Training Stack', 'Inference Stack'].map((title) => (
+            <div
+              key={title}
+              className="bg-primary-700 rounded-lg p-6 w-48 h-24 flex items-center justify-center shadow border-2 border-transparent hover:border-white transition-colors duration-200 cursor-pointer"
+              onClick={() => {
+                const path = `/${title.toLowerCase().replace(/ /g, '-')}`
+                navigate(path)
+              }}
+            >
+              <span className="text-white font-semibold text-lg">{title}</span>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      label: 'Company',
+      mainTo: '/about',
+      content: (
+        <div className="flex justify-center gap-6 p-8 min-w-[900px] bg-gray-900/80 border border-gray-800 rounded-2xl shadow-2xl">
+          {['Story', 'Team', 'Careers', 'Contact'].map((title) => (
+            <div
+              key={title}
+              className="bg-primary-700 rounded-lg p-6 w-48 h-24 flex items-center justify-center shadow border-2 border-transparent hover:border-white transition-colors duration-200 cursor-pointer"
+              onClick={() => {
+                const path = `/${title.toLowerCase()}`
+                navigate(path)
+              }}
+            >
+              <span className="text-white font-semibold text-lg">{title}</span>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      label: 'Learn More',
+      mainTo: '#',
+      content: (
+        <div className="flex justify-center gap-6 p-8 min-w-[900px] bg-gray-900/80 border border-gray-800 rounded-2xl shadow-2xl">
+          {['Blog', 'Press Releases', 'Case Studies'].map((title) => (
+            <div
+              key={title}
+              className="bg-primary-700 rounded-lg p-6 w-48 h-24 flex items-center justify-center shadow border-2 border-transparent hover:border-white transition-colors duration-200 cursor-pointer"
+              onClick={() => {
+                const path = `/${title.toLowerCase().replace(/ /g, '-')}`
+                navigate(path)
+              }}
+            >
+              <span className="text-white font-semibold text-lg">{title}</span>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+  ]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-900">
@@ -107,6 +108,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-6">
               <div
                 className="text-base font-medium transition-colors duration-200 text-white/80 hover:text-primary-500 cursor-pointer"
+                onClick={() => navigate('/')}
               >
                 Home
               </div>

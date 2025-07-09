@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Play, Users, Shield, Globe, Cpu, TrendingUp, CheckCircle, BarChart3, Target, Clock, DollarSign, Zap, Cloud, Server, Database, Lock, Activity } from 'lucide-react'
 import Navbar from '../components/Navbar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Lottie from 'lottie-react'
 // Animation will be loaded dynamically
 const gpuAnimation = null
@@ -11,14 +11,18 @@ const OmniStack = () => {
   const [hoveredSection, setHoveredSection] = useState<string | null>(null)
   const [activeBar, setActiveBar] = useState<string | null>(null)
   const [gpuAnimationData, setGpuAnimationData] = useState(null)
+  const navigate = useNavigate()
+
+  // Get the base path for GitHub Pages deployment
+  const base = (import.meta as any).env?.PROD ? '/TatariSystems' : ''
 
   // Load animation data
   useEffect(() => {
-    fetch('/animations/gpuanim.json')
+    fetch(`${base}/animations/gpuanim.json`)
       .then(response => response.json())
       .then(data => setGpuAnimationData(data))
       .catch(error => console.error('Error loading GPU animation:', error))
-  }, [])
+  }, [base])
 
   const stats = [
     { number: "30%", label: "Savings vs. industry average", icon: TrendingUp },
@@ -124,14 +128,14 @@ const OmniStack = () => {
               >
                 <div
                   className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
-                  onClick={() => window.location.href = '/run/compute'}
+                  onClick={() => navigate('/run/compute')}
                 >
                   Launch Omni Stack
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </div>
                 <div
                   className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
-                  onClick={() => window.location.href = '/company/contact'}
+                  onClick={() => navigate('/company/contact')}
                 >
                   Contact Us
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Play, Users, Shield, Globe, Cpu, TrendingUp, CheckCircle, BarChart3, Target, Clock, DollarSign, Zap, Cloud, Server, Database, Lock, Activity, ChevronRight, ChevronLeft } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Lottie from 'lottie-react'
+import { useNavigate } from 'react-router-dom'
 // Animation will be loaded dynamically
 const aiAnimation = null
 
@@ -13,19 +14,23 @@ const Story = () => {
   const [aiAnimationData, setAiAnimationData] = useState(null)
   const [bitcoinAnimationData, setBitcoinAnimationData] = useState(null)
   const aiImageRef = useRef<HTMLDivElement>(null)
+  const navigate = useNavigate()
+
+  // Get the base path for GitHub Pages deployment
+  const base = (import.meta as any).env?.PROD ? '/TatariSystems' : ''
 
   // Load animation data
   useEffect(() => {
-    fetch('/animations/aianim.json')
+    fetch(`${base}/animations/aianim.json`)
       .then(response => response.json())
       .then(data => setAiAnimationData(data))
       .catch(error => console.error('Error loading AI animation:', error))
     
-    fetch('/animations/bitcoinanim.json')
+    fetch(`${base}/animations/bitcoinanim.json`)
       .then(response => response.json())
       .then(data => setBitcoinAnimationData(data))
       .catch(error => console.error('Error loading Bitcoin animation:', error))
-  }, [])
+  }, [base])
 
   const subheads = [
     "AI is accelerating everything.",
@@ -181,11 +186,17 @@ const Story = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <div className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer">
+              <div 
+                className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
+                onClick={() => navigate('/about')}
+              >
                 Learn Our Story
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </div>
-              <div className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer">
+              <div 
+                className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
+                onClick={() => navigate('/team')}
+              >
                 Meet the Team
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </div>
