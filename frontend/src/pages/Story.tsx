@@ -13,6 +13,7 @@ const Story = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [aiAnimationData, setAiAnimationData] = useState(null)
   const [bitcoinAnimationData, setBitcoinAnimationData] = useState(null)
+  const [infrastructureAnimationData, setInfrastructureAnimationData] = useState(null)
   const aiImageRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
 
@@ -21,15 +22,20 @@ const Story = () => {
 
   // Load animation data
   useEffect(() => {
-    fetch(`${base}/animations/aianim.json`)
-      .then(response => response.json())
-      .then(data => setAiAnimationData(data))
-      .catch(error => console.error('Error loading AI animation:', error))
-    
-    fetch(`${base}/animations/bitcoinanim.json`)
+    fetch(`${base}/animations/sec1.json`)
       .then(response => response.json())
       .then(data => setBitcoinAnimationData(data))
-      .catch(error => console.error('Error loading Bitcoin animation:', error))
+      .catch(error => console.error('Error loading Section 1 animation:', error))
+    
+    fetch(`${base}/animations/sec2.json`)
+      .then(response => response.json())
+      .then(data => setAiAnimationData(data))
+      .catch(error => console.error('Error loading Section 2 animation:', error))
+    
+    fetch(`${base}/animations/sec3.json`)
+      .then(response => response.json())
+      .then(data => setInfrastructureAnimationData(data))
+      .catch(error => console.error('Error loading Section 3 animation:', error))
   }, [base])
 
   const subheads = [
@@ -42,22 +48,25 @@ const Story = () => {
 
   const originSlides = [
     {
-      title: "The Beginning",
-      content: "Founded by industry veterans frustrated by the mismatch between AI demand and traditional cloud pricing models, Tatari's core mission is to democratize access to high-performance, low-carbon compute.",
+      title: "Act I: Origins",
+      subtitle: "From heat and metal",
+      content: "We cut our teeth in the Ethiopian highlands. Hundreds of machines. Mining BTC. Debugging firmware. Fighting heat. Running lean. We didn't just manage compute. We learned how to master it — when uptime meant survival.",
       color: "from-blue-500 to-blue-600",
-      animation: "Mining Animation"
+      animation: "Bitcoin Mining Animation"
     },
     {
-      title: "The Vision",
-      content: "We believe that access to powerful compute shouldn't be limited by geography, budget, or infrastructure complexity. Our platform makes it possible for anyone to build the future.",
+      title: "Act II: Inflection", 
+      subtitle: "The world needed compute",
+      content: "Then the GPU crunch hit. AI exploded. Pricing spiked. So did the carbon footprint. We knew the momentum was unstoppable. So we built a way forward — one that could scale without waste.",
       color: "from-green-500 to-green-600",
-      animation: "Rocket Animation"
+      animation: "AI Technology Animation"
     },
     {
-      title: "The Future",
-      content: "As AI continues to reshape industries, we're building the infrastructure that powers the builders. From startups to enterprises, we're here to accelerate innovation.",
+      title: "Act III: Tatari Now",
+      subtitle: "Now we run hot, fast, and clean", 
+      content: "Today, Tatari delivers bare-metal access to H100s and A100s — no VMs, no lock-ins. Launch in seconds. Scale without waste. Our infrastructure thinks like a racer: tuned, minimal, built to win.",
       color: "from-purple-500 to-purple-600",
-      animation: "Lightning Animation"
+      animation: "Infrastructure Animation"
     }
   ]
 
@@ -188,16 +197,16 @@ const Story = () => {
             >
               <div 
                 className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
-                onClick={() => navigate('/about')}
+                onClick={() => navigate('/how-we-run')}
               >
-                Learn Our Story
+                How We Run
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </div>
               <div 
                 className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
-                onClick={() => navigate('/team')}
+                onClick={() => navigate('/launch-job')}
               >
-                Meet the Team
+                Launch a Job
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </div>
             </motion.div>
@@ -215,22 +224,25 @@ const Story = () => {
               className="w-80 h-80 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl border border-primary-500/30 flex items-center justify-center transition-transform duration-300 ease-out"
               style={{ perspective: '1000px' }}
             >
-              {aiAnimationData ? (
-                <Lottie
-                  animationData={aiAnimationData}
-                  loop={true}
-                  autoplay={true}
-                  style={{ width: '100%', height: '100%' }}
-                />
-              ) : (
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center shadow-2xl">
-                    <span className="text-6xl">🤖</span>
-                  </div>
-                  <p className="text-white/80 text-lg">AI Technology</p>
-                  <p className="text-white/60 text-sm mt-2">Loading Animation...</p>
+              <img 
+                src={`${base}/assets/ai.png`}
+                alt="AI Technology"
+                className="w-full h-full object-contain rounded-xl"
+                onError={(e) => {
+                  // Fallback if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              <div className="text-center hidden">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center shadow-2xl">
+                  <span className="text-6xl">🤖</span>
                 </div>
-              )}
+                <p className="text-white/80 text-lg">AI Technology</p>
+                <p className="text-white/60 text-sm mt-2">Loading Animation...</p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -263,9 +275,14 @@ const Story = () => {
                 className="absolute inset-0 flex flex-col lg:flex-row items-center justify-between"
               >
                 <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0">
-                  <h3 className="text-3xl font-bold text-white mb-6">
+                  <h3 className="text-3xl font-bold text-white mb-2">
                     {originSlides[currentSlide].title}
                   </h3>
+                  {originSlides[currentSlide].subtitle && (
+                    <p className="text-lg text-gray-400 mb-6 italic">
+                      {originSlides[currentSlide].subtitle}
+                    </p>
+                  )}
                   <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                     {originSlides[currentSlide].content}
                   </p>
@@ -273,7 +290,7 @@ const Story = () => {
                 
                 <div className="flex-1 flex justify-center lg:justify-end">
                   {currentSlide === 0 && bitcoinAnimationData ? (
-                    <div className="w-64 h-64 rounded-2xl flex items-center justify-center">
+                    <div className="w-80 h-80 rounded-2xl flex items-center justify-center">
                       <Lottie
                         animationData={bitcoinAnimationData}
                         loop={true}
@@ -281,8 +298,26 @@ const Story = () => {
                         style={{ width: '100%', height: '100%' }}
                       />
                     </div>
+                  ) : currentSlide === 1 && aiAnimationData ? (
+                    <div className="w-80 h-80 rounded-2xl flex items-center justify-center">
+                      <Lottie
+                        animationData={aiAnimationData}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    </div>
+                  ) : currentSlide === 2 && infrastructureAnimationData ? (
+                    <div className="w-80 h-80 rounded-2xl flex items-center justify-center">
+                      <Lottie
+                        animationData={infrastructureAnimationData}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    </div>
                   ) : (
-                    <div className={`w-64 h-64 bg-gradient-to-br ${originSlides[currentSlide].color} rounded-2xl border border-gray-600 flex items-center justify-center shadow-xl`}>
+                    <div className={`w-80 h-80 bg-gradient-to-br ${originSlides[currentSlide].color} rounded-2xl border border-gray-600 flex items-center justify-center shadow-xl`}>
                       <div className="text-center">
                         <div className="w-20 h-20 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
                           <span className="text-4xl">
@@ -291,7 +326,7 @@ const Story = () => {
                         </div>
                         <p className="text-white/80 text-lg">{originSlides[currentSlide].animation}</p>
                         <p className="text-white/60 text-sm mt-2">
-                          {currentSlide === 0 ? 'Loading Bitcoin Animation...' : 'Lottie Animation'}
+                          {currentSlide === 0 ? 'Loading Section 1 Animation...' : currentSlide === 1 ? 'Loading Section 2 Animation...' : 'Loading Section 3 Animation...'}
                         </p>
                       </div>
                     </div>
