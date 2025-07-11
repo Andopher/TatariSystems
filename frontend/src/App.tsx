@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import About from './pages/About'
 import AIPlatform from './pages/AIPlatform'
 import Contact from './pages/Contact'
-import BitcoinMining from './pages/About/BitcoinMining'
 import OmniStack from './pages/OmniStack'
 import Pricing from './pages/Pricing'
 import TrainingStack from './pages/TrainingStack'
@@ -15,6 +14,7 @@ import Careers from './pages/Careers'
 import Blog from './pages/Blog'
 import PressReleases from './pages/PressReleases'
 import CaseStudies from './pages/CaseStudies'
+import Mining from './pages/Mining'
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/ai-platform" element={<AIPlatform />} />
           <Route path="/about" element={<About />} />
-          <Route path="/about/bitcoin-mining" element={<BitcoinMining />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/omni-stack" element={<OmniStack />} />
           <Route path="/pricing" element={<Pricing />} />
@@ -36,6 +35,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/press-releases" element={<PressReleases />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/mining" element={<Mining />} />
         </Routes>
       </>
     </AnimatePresence>

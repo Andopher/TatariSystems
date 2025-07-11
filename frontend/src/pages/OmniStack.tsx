@@ -3,25 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Play, Users, Shield, Globe, Cpu, TrendingUp, CheckCircle, BarChart3, Target, Clock, DollarSign, Zap, Cloud, Server, Database, Lock, Activity, MapPin, Building, Rocket, Scale, Map, Mountain, TreePine, Waves, Sun } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
-import Lottie from 'lottie-react'
 
 const OmniStack = () => {
   const [hoveredSection, setHoveredSection] = useState<string | null>(null)
   const [activeBar, setActiveBar] = useState<string | null>('build')
-  const [gpuAnimationData, setGpuAnimationData] = useState(null)
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null)
   const navigate = useNavigate()
 
   // Get the base path for GitHub Pages deployment
   const base = (import.meta as any).env?.PROD ? '/TatariSystems' : ''
-
-  // Load animation data
-  useEffect(() => {
-    fetch(`${base}/animations/techanim.json`)
-      .then(response => response.json())
-      .then(data => setGpuAnimationData(data))
-      .catch(error => console.error('Error loading GPU animation:', error))
-  }, [base])
 
   const stats = [
     { number: "30%", label: "Savings vs. industry average", icon: TrendingUp },
@@ -134,18 +124,30 @@ const OmniStack = () => {
     <div className="min-h-screen bg-black">
       <Navbar />
       
-      {/* Section 1: Hero with Lottie Animation */}
+      {/* Section 1: Hero with Video Background */}
       <section className="relative min-h-screen flex flex-col items-center justify-center z-10 overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={`${base}/assets/background1.mp4`} type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            {/* Left Content */}
+          <div className="flex flex-col items-center justify-center text-center">
+            {/* Content */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex-1 text-center lg:text-left"
+              className="max-w-4xl"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -159,7 +161,7 @@ const OmniStack = () => {
                     AI Stack
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+                <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
                   From training to inference, Tatari's Omni Stack gives you everything you need to build, deploy, and scale AI applications.
                 </p>
               </motion.div>
@@ -168,7 +170,7 @@ const OmniStack = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-4 justify-center"
               >
                 <div
                   className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
@@ -178,42 +180,13 @@ const OmniStack = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </div>
                 <div
-                  className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  className="group text-white hover:underline font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
                   onClick={() => navigate('/company/contact')}
                 >
                   Contact Us
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>
-            </motion.div>
-
-            {/* Right Animation */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex-1 flex justify-center lg:justify-end"
-            >
-              {gpuAnimationData ? (
-                <div className="w-full max-w-md h-96 flex items-center justify-center">
-                  <Lottie
-                    animationData={gpuAnimationData}
-                    loop={true}
-                    autoplay={true}
-                    style={{ width: '100%', height: '100%' }}
-                  />
-                </div>
-              ) : (
-                <div className="w-full max-w-md h-96 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl border border-primary-500/30 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
-                      <Server className="h-12 w-12 text-white" />
-                    </div>
-                    <p className="text-white/80 text-lg">GPU Clusters Animation</p>
-                    <p className="text-white/60 text-sm mt-2">Loading Animation...</p>
-                  </div>
-                </div>
-              )}
             </motion.div>
           </div>
         </div>
@@ -558,19 +531,20 @@ const OmniStack = () => {
               Join thousands of developers building the next generation of AI applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
+              <div
+                className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
                 onClick={() => navigate('/run/compute')}
-                className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-xl transition-colors duration-200 flex items-center justify-center"
               >
                 Launch a Training Cluster
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
-              <button
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <div
+                className="group text-white hover:underline font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
                 onClick={() => navigate('/contact')}
-                className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-4 px-8 rounded-xl transition-colors duration-200"
               >
                 Talk to Us
-              </button>
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </div>
             </div>
           </motion.div>
         </div>

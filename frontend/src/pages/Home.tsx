@@ -614,22 +614,19 @@ const Home = () => {
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Get instant access to powerful GPUs. Try for free or schedule a demo—no commitment required.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <motion.button 
-                className="group bg-white text-primary-600 hover:bg-gray-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div
+                className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
               >
                 Get Started Free
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              <motion.button 
-                className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              </div>
+              <div
+                className="group text-white hover:underline font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
               >
                 Schedule Demo
-              </motion.button>
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </div>
             </div>
           </motion.div>
         </div>

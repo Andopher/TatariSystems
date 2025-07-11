@@ -152,7 +152,7 @@ const Story = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center z-10 overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
+        {/* Removed background for cleaner look */}
         
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Left Content */}
@@ -168,9 +168,9 @@ const Story = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                The world is changing fast.
+                The world is changing fast<span className="text-primary-500">.</span>
                 <br />
-                We power what's next.
+                We power what's next<span className="text-primary-500">.</span>
               </h1>
               
               <div className="h-20 mb-8 flex items-center justify-center lg:justify-start">
@@ -181,7 +181,7 @@ const Story = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto lg:mx-0"
+                    className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto lg:mx-0 italic"
                   >
                     {subheads[currentSubhead]}
                   </motion.p>
@@ -203,7 +203,7 @@ const Story = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </div>
               <div 
-                className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
+                className="group text-white hover:underline font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
                 onClick={() => navigate('/launch-job')}
               >
                 Launch a Job
@@ -221,7 +221,7 @@ const Story = () => {
           >
             <div 
               ref={aiImageRef}
-              className="w-80 h-80 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl border border-primary-500/30 flex items-center justify-center transition-transform duration-300 ease-out"
+              className="w-[500px] h-[500px] rounded-2xl flex items-center justify-center transition-transform duration-300 ease-out"
               style={{ perspective: '1000px' }}
             >
               <img 
@@ -283,9 +283,20 @@ const Story = () => {
                       {originSlides[currentSlide].subtitle}
                     </p>
                   )}
-                  <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-6">
                     {originSlides[currentSlide].content}
                   </p>
+                  {currentSlide === 0 && (
+                    <div className="flex justify-center lg:justify-start">
+                      <div 
+                        onClick={() => navigate('/mining')}
+                        className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
+                      >
+                        Mining
+                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="flex-1 flex justify-center lg:justify-end">
@@ -366,7 +377,7 @@ const Story = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -381,28 +392,47 @@ const Story = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value, idx) => (
-              <motion.div
-                key={value.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition-all duration-300"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl font-bold text-white">{value.number}</span>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row mt-20 mb-32">
+              {values.slice(0, 3).map((value, idx) => (
+                <div
+                  key={value.number}
+                  className={`flex-1 flex flex-col items-center px-0 lg:px-8 mb-12 lg:mb-0
+                    ${idx !== 0 ? 'border-l border-gray-400' : ''}
+                    ${idx !== 2 ? 'border-r border-gray-400' : ''}
+                  `}
+                >
+                  <div className="flex flex-col items-center mb-6">
+                    <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mb-4">
+                      <span className="text-2xl font-bold text-white">{value.number}</span>
+                    </div>
+                    <value.icon className="h-8 w-8 text-primary-500" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{value.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 text-center">{value.title}</h3>
+                  <p className="text-gray-300 leading-relaxed text-center">{value.description}</p>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
+            <div className="flex flex-col lg:flex-row mt-32 mb-20">
+              {values.slice(3, 6).map((value, idx) => (
+                <div
+                  key={value.number}
+                  className={`flex-1 flex flex-col items-center px-0 lg:px-8 mb-12 lg:mb-0
+                    ${idx !== 0 ? 'border-l border-gray-400' : ''}
+                    ${idx !== 2 ? 'border-r border-gray-400' : ''}
+                  `}
+                >
+                  <div className="flex flex-col items-center mb-6">
+                    <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mb-4">
+                      <span className="text-2xl font-bold text-white">{value.number}</span>
+                    </div>
+                    <value.icon className="h-8 w-8 text-primary-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 text-center">{value.title}</h3>
+                  <p className="text-gray-300 leading-relaxed text-center">{value.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -460,7 +490,7 @@ const Story = () => {
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </div>
-              <div className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer">
+              <div className="group text-white hover:underline font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer">
                 Meet the Team
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </div>

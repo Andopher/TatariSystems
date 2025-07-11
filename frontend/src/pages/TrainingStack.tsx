@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Cpu, Zap, Globe, DollarSign, BookOpen, Sliders, Users } from 'lucide-react';
+import { Cpu, Zap, Globe, DollarSign, BookOpen, Sliders, Users, ArrowRight } from 'lucide-react';
 import Lottie from 'lottie-react';
 import Navbar from '../components/Navbar';
 
 const TrainingStack = () => {
   const [gpuAnimationData, setGpuAnimationData] = useState(null);
+  const navigate = useNavigate();
   const base = (import.meta as any).env?.PROD ? '/TatariSystems' : '';
 
   useEffect(() => {
@@ -52,8 +53,20 @@ const TrainingStack = () => {
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Purpose-Built GPU Infrastructure for AI Training Workloads</h1>
             <p className="text-xl text-gray-300 mb-8">Launch large-scale model training in minutes with full control, bare-metal performance, and global scale.</p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Link to="/training-stack/early-access" className="bg-primary-600 hover:bg-primary-700 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl flex items-center justify-center text-lg">Join Early Access &rarr;</Link>
-              <Link to="/company/contact" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center text-lg">Talk to Sales &rarr;</Link>
+              <div
+                className="group bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center cursor-pointer"
+                onClick={() => navigate('/training-stack/early-access')}
+              >
+                Join Early Access
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <div
+                className="group text-white hover:underline font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
+                onClick={() => navigate('/company/contact')}
+              >
+                Talk to Sales
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </div>
             </div>
           </motion.div>
           {/* Right: Lottie Animation */}
@@ -79,88 +92,95 @@ const TrainingStack = () => {
         </motion.section>
 
         {/* How It Works */}
-        <motion.section className="py-16 px-4 sm:px-8 bg-gray-900"
+        <motion.section className="py-24 px-4 sm:px-8 bg-gray-900"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-800 rounded-2xl p-8 text-center border border-gray-700">
-              <Cpu className="mx-auto mb-4 h-10 w-10 text-primary-500" />
-              <h3 className="text-xl font-bold mb-2">Spin Up in Minutes</h3>
-              <p className="text-gray-300">Deploy H100, A100, or H200 training clusters at scale — no queue, no waiting.</p>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-800 rounded-2xl p-8 text-center border border-gray-700">
-              <Sliders className="mx-auto mb-4 h-10 w-10 text-primary-500" />
-              <h3 className="text-xl font-bold mb-2">Scale Efficiently</h3>
-              <p className="text-gray-300">Add or remove GPU nodes instantly to match your training cycles.</p>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-800 rounded-2xl p-8 text-center border border-gray-700">
-              <BookOpen className="mx-auto mb-4 h-10 w-10 text-primary-500" />
-              <h3 className="text-xl font-bold mb-2">Customize Your Stack</h3>
-              <p className="text-gray-300">Run your own containers, frameworks, or pre-configured environments.</p>
-            </motion.div>
+          <h2 className="text-3xl font-bold text-white mb-16 text-center">How It Works</h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row mt-20 mb-20">
+              {[{icon: Cpu, title: 'Spin Up in Minutes', desc: 'Deploy H100, A100, or H200 training clusters at scale — no queue, no waiting.'}, {icon: Sliders, title: 'Scale Efficiently', desc: 'Add or remove GPU nodes instantly to match your training cycles.'}, {icon: BookOpen, title: 'Customize Your Stack', desc: 'Run your own containers, frameworks, or pre-configured environments.'}].map((item, idx) => (
+                <div
+                  key={item.title}
+                  className={`flex-1 flex flex-col items-center px-0 md:px-8 mb-12 md:mb-0
+                    ${idx !== 0 ? 'border-l border-gray-400' : ''}
+                    ${idx !== 2 ? 'border-r border-gray-400' : ''}
+                  `}
+                >
+                  <item.icon className="mb-4 h-10 w-10 text-primary-500" />
+                  <h3 className="text-xl font-bold mb-2 text-center">{item.title}</h3>
+                  <p className="text-gray-300 text-center">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.section>
 
         {/* Why Tatari? */}
-        <motion.section className="py-16 px-4 sm:px-8"
+        <motion.section className="py-24 px-4 sm:px-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">The Tatari Training Advantage</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-900 rounded-2xl p-6 text-center border border-gray-700 flex flex-col items-center">
-              <Cpu className="h-10 w-10 text-primary-500 mb-3" />
-              <div className="font-bold mb-1">Full GPU Access</div>
-              <div className="text-gray-300 text-sm">No virtualization, direct bare-metal performance</div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-900 rounded-2xl p-6 text-center border border-gray-700 flex flex-col items-center">
-              <Zap className="h-10 w-10 text-primary-500 mb-3" />
-              <div className="font-bold mb-1">Built for Deep Learning</div>
-              <div className="text-gray-300 text-sm">Optimized for PyTorch, JAX, and TensorFlow</div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-900 rounded-2xl p-6 text-center border border-gray-700 flex flex-col items-center">
-              <Globe className="h-10 w-10 text-primary-500 mb-3" />
-              <div className="font-bold mb-1">Global Footprint</div>
-              <div className="text-gray-300 text-sm">Serve models close to your data sources</div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-900 rounded-2xl p-6 text-center border border-gray-700 flex flex-col items-center">
-              <DollarSign className="h-10 w-10 text-primary-500 mb-3" />
-              <div className="font-bold mb-1">Lower TCO</div>
-              <div className="text-gray-300 text-sm">Save up to 30% vs. traditional cloud solutions</div>
-            </motion.div>
+          <h2 className="text-3xl font-bold text-white mb-16 text-center">The Tatari Training Advantage</h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row mt-20 mb-32">
+              {[{icon: Cpu, title: 'Full GPU Access', desc: 'No virtualization, direct bare-metal performance'}, {icon: Zap, title: 'Built for Deep Learning', desc: 'Optimized for PyTorch, JAX, and TensorFlow'}].map((item, idx) => (
+                <div
+                  key={item.title}
+                  className={`flex-1 flex flex-col items-center px-0 md:px-8 mb-12 md:mb-0
+                    ${idx !== 0 ? 'border-l border-gray-400' : ''}
+                    ${idx !== 1 ? 'border-r border-gray-400' : ''}
+                  `}
+                >
+                  <item.icon className="h-10 w-10 text-primary-500 mb-3" />
+                  <div className="font-bold mb-1 text-center">{item.title}</div>
+                  <div className="text-gray-300 text-sm text-center">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col md:flex-row mt-32 mb-20">
+              {[{icon: Globe, title: 'Global Footprint', desc: 'Serve models close to your data sources'}, {icon: DollarSign, title: 'Lower TCO', desc: 'Save up to 30% vs. traditional cloud solutions'}].map((item, idx) => (
+                <div
+                  key={item.title}
+                  className={`flex-1 flex flex-col items-center px-0 md:px-8 mb-12 md:mb-0
+                    ${idx !== 0 ? 'border-l border-gray-400' : ''}
+                    ${idx !== 1 ? 'border-r border-gray-400' : ''}
+                  `}
+                >
+                  <item.icon className="h-10 w-10 text-primary-500 mb-3" />
+                  <div className="font-bold mb-1 text-center">{item.title}</div>
+                  <div className="text-gray-300 text-sm text-center">{item.desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.section>
 
         {/* Use Cases */}
-        <motion.section className="py-16 px-4 sm:px-8 bg-gray-900"
+        <motion.section className="py-24 px-4 sm:px-8 bg-gray-900"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Built for Real Workloads</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-800 rounded-2xl p-8 text-center border border-gray-700 transition-transform duration-300">
-              <Zap className="mx-auto mb-4 h-10 w-10 text-primary-500" />
-              <h3 className="text-xl font-bold mb-2">LLM Training</h3>
-              <p className="text-gray-300">Scale transformer models with predictable GPU performance</p>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-800 rounded-2xl p-8 text-center border border-gray-700 transition-transform duration-300">
-              <Sliders className="mx-auto mb-4 h-10 w-10 text-primary-500" />
-              <h3 className="text-xl font-bold mb-2">Fine-Tuning & RLHF</h3>
-              <p className="text-gray-300">Customize foundation models with full environment control</p>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} className="bg-gray-800 rounded-2xl p-8 text-center border border-gray-700 transition-transform duration-300">
-              <BookOpen className="mx-auto mb-4 h-10 w-10 text-primary-500" />
-              <h3 className="text-xl font-bold mb-2">Academic & Scientific Research</h3>
-              <p className="text-gray-300">Run repeatable experiments at institutional scale</p>
-            </motion.div>
-          </div>
-          <div className="text-center mt-8 text-gray-400 text-sm">
-            Trusted by early-stage startups, labs, and enterprise teams.
+          <h2 className="text-3xl font-bold text-white mb-16 text-center">Built for Real Workloads</h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row mt-20 mb-20">
+              {[{icon: Zap, title: 'LLM Training', desc: 'Scale transformer models with predictable GPU performance'}, {icon: Sliders, title: 'Fine-Tuning & RLHF', desc: 'Customize foundation models with full environment control'}, {icon: BookOpen, title: 'Academic & Scientific Research', desc: 'Run repeatable experiments at institutional scale'}].map((item, idx) => (
+                <div
+                  key={item.title}
+                  className={`flex-1 flex flex-col items-center px-0 md:px-8 mb-12 md:mb-0
+                    ${idx !== 0 ? 'border-l border-gray-400' : ''}
+                    ${idx !== 2 ? 'border-r border-gray-400' : ''}
+                  `}
+                >
+                  <item.icon className="mx-auto mb-4 h-10 w-10 text-primary-500" />
+                  <h3 className="text-xl font-bold mb-2 text-center">{item.title}</h3>
+                  <p className="text-gray-300 text-center">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.section>
 
