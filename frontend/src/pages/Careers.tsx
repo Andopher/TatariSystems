@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import { ArrowRight, Wrench, Globe, Brain, Users } from 'lucide-react'
+import { getAssetPath } from '../utils/paths'
 
 const careerImages = [
-  '/assets/career1.jpg',
-  '/assets/career2.JPEG',
-  '/assets/career3.JPEG',
-  '/assets/career4.JPEG',
+  getAssetPath('/assets/career1.jpg'),
+  getAssetPath('/assets/career2.JPEG'),
+  getAssetPath('/assets/career3.JPEG'),
+  getAssetPath('/assets/career4.JPEG'),
 ]
 
 const Careers = () => {
