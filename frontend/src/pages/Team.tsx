@@ -16,13 +16,6 @@ const executiveTeam = [
     bio: '/team/yasha-genkin'
   },
   { 
-    name: 'Amen Amare', 
-    role: 'Chief Operating Officer, Co-Founder', 
-    img: 'amare.jpg',
-    linkedin: 'https://linkedin.com/in/amen-amare',
-    bio: '/team/amen-amare'
-  },
-  { 
     name: 'Meba Michael', 
     role: 'Chief Financial Officer, Co-Founder', 
     img: 'michael.jpg',

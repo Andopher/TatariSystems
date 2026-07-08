@@ -9,7 +9,6 @@ import useInView from '../hooks/useInView'
 
 const team = [
   { name: 'Yasha Genkin', role: 'Chief Executive Officer, Co-Founder', img: 'genkin.jpg' },
-  { name: 'Amen Amare', role: 'Chief Operating Officer, Co-Founder', img: 'amare.jpg' },
   { name: 'Meba Michael', role: 'Chief Financial Officer, Co-Founder', img: 'michael.jpg' },
   { name: 'Glodi Karagi', role: 'Chief of Business Development', img: 'karagi.jpg' },
   { name: 'Nathan Banketa', role: 'Chief Research Officer', img: 'banketa.jpg' },
