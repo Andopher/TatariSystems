@@ -35,7 +35,7 @@ const Home = () => {
       label: 'ASICs Operational',
     },
     {
-      value: '1+ BTC',
+      value: '3+ BTC',
       label: 'Mined to Date',
     },
     {

@@ -283,7 +283,7 @@ const AICompute = () => {
               </p>
               <p style={{ margin: '8px 0 0', fontSize: 15, color: phase1Active ? 'var(--inst-text-70)' : 'var(--inst-text-50)', transition: 'color 0.4s ease-in-out' }}>
                 144 ASIC miners running in Addis Ababa, Ethiopia. 5 MW of power in the contracting
-                process. 99%+ uptime. 1+ BTC mined. Proving the energy arbitrage thesis with real
+                process. 99%+ uptime. 3 BTC mined. Proving the energy arbitrage thesis with real
                 hardware and real economics.
               </p>
             </div>

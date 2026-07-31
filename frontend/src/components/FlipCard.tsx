@@ -34,6 +34,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ member, index }) => {
               src={getAssetPath(`headshots/${member.img}`)}
               alt={member.name}
               className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-primary-500 shadow-lg"
+              style={{ 
+                objectPosition: member.name === 'Yasha Genkin' ? 'center 25%' : 'center',
+                filter: member.name === 'Yasha Genkin' ? 'grayscale(100%) brightness(0.6)' : 'grayscale(100%)'
+              }}
               onError={e => {
                 const target = e.target as HTMLImageElement;
                 target.onerror = null;

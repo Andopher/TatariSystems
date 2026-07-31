@@ -97,7 +97,12 @@ const About = () => {
                       src={getAssetPath(`/headshots/${member.img}`)}
                       alt={member.name}
                       className="w-28 h-28 rounded-full object-cover mb-4"
-                      style={{ display: 'block', margin: '0 auto 16px' }}
+                      style={{ 
+                        display: 'block', 
+                        margin: '0 auto 16px',
+                        objectPosition: member.name === 'Yasha Genkin' ? 'center 25%' : 'center',
+                        filter: member.name === 'Yasha Genkin' ? 'grayscale(100%) brightness(0.6)' : 'grayscale(100%)'
+                      }}
 
                       onError={e => {
                         const target = e.target as HTMLImageElement;
